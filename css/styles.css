@@ -34,9 +34,9 @@ body{
     justify-content: space-between;
     align-items: center;
     block-size: 80px;
-    position: sticky;
+    /*position: sticky;*/
     top: 0;
-    backdrop-filter: blur(10px);
+    /*backdrop-filter: blur(10px);*/
 }
 
 
@@ -118,6 +118,7 @@ body{
 
     .hero-desription{
         order: 1;
+        
     }
 
     .hero-image{
@@ -202,7 +203,7 @@ body{
 
 @media (min-width: 768px) {
     .medio{
-        height: 500px;
+        height: 400px;
         padding: 40px;
         
     }
