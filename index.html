@@ -31,7 +31,7 @@
 
 
 
-            <button class="button">Curriculum</button>
+            <a href="https://docs.google.com/document/d/1fmPV7JNbycKpndwUOGPDYHULaKADgmZz-1jbDcYxWS4/edit?usp=sharing" class="button">Curriculum</a>
         </header>
         
 
@@ -46,13 +46,12 @@
                 </h1>
                 <p>Frontend Developer que le encanta implementar diseños que inspiran y atraen a las personas.</p>
                 <div class="hero-social">
-                    <a class="button-icon" href="tel:+541132773316"><img src="/images/icon-phone.svg" alt="icon-phone"></a>
                     
-                    <a class="button-icon" href="tel:+541132773316"><img src="/images/icon-mail.svg" alt="icon-phone"></a>
+                    <a  class="button-icon" href="fernandezfrnacoa2001@gmail.com"><img src="/images/icon-mail.svg" alt="icon-email"></a>
                     
-                    <a class="button-icon" href="tel:+541132773316"><img src="/images/icon-github.svg" alt="icon-phone"></a>
+                    <a target="_blank" class="button-icon" href="https://github.com/franfront"><img src="/images/icon-github.svg" alt="icon-github"></a>
                     
-                    <a class="button-icon" href="tel:+541132773316"><img src="/images/icon-twitter.svg" alt="icon-phone"></a> 
+                    <a  target="_blank" class="button-icon" href="tel:https://twitter.com/erebo399"><img src="/images/icon-twitter.svg" alt="icon-twitter"></a> 
                 </div>
                 <a href="https://docs.google.com/document/d/1fmPV7JNbycKpndwUOGPDYHULaKADgmZz-1jbDcYxWS4/edit?usp=sharing" class="button">Descargar Curriculum</a>
                 
@@ -131,9 +130,9 @@
     </div>
 </div>
 
-    <form action="" class="form" id="contact">
+    <form  action="https://formspree.io/f/mzbyewwk" method="POST" class="form" id="contact">
 
-        <h2 class="title" id="#contact">Hablemos</h2>
+        <h2 class="title">Hablemos</h2>
 
         <p>Si está interesado en trabajar conmigo en su próximo proyecto, 
             no dude en ponerse en contacto conmigo.</p>
@@ -151,7 +150,7 @@
             <textarea required name="message" id="form-message" cols="30" rows="6"></textarea>
 
         </label>
-        <button class="button" type="submit">Enviar Mensaje</button>
+        <button class="button" type="submit" id="trucazo">Enviar Mensaje</button>
 
     </form>
 
@@ -163,18 +162,36 @@
 
     <footer class="footer">
         <div class="hero-social">
-            <a class="button-icon" href="tel:+541132773316"><img src="/images/icon-phone.svg" alt="icon-phone"></a>
-            
-            <a class="button-icon" href="tel:+541132773316"><img src="/images/icon-mail.svg" alt="icon-phone"></a>
-            
-            <a class="button-icon" href="tel:+541132773316"><img src="/images/icon-github.svg" alt="icon-phone"></a>
-            
-            <a class="button-icon" href="tel:+541132773316"><img src="/images/icon-twitter.svg" alt="icon-phone"></a> 
+            <a  class="button-icon" href="fernandezfrnacoa2001@gmail.com"><img src="/images/icon-mail.svg" alt="icon-email"></a>
+                    
+                    <a target="_blank" class="button-icon" href="https://github.com/franfront"><img src="/images/icon-github.svg" alt="icon-github"></a>
+                    
+                    <a  target="_blank" class="button-icon" href="tel:https://twitter.com/erebo399"><img src="/images/icon-twitter.svg" alt="icon-twitter"></a> 
         </div>
     </footer>
     
         
         
+    <script>
+        const $form = document.querySelector("#contact");
 
+$form.addEventListener("submit", handleSubmit)
+
+async function handleSubmit(event){
+    event.preventDefault()
+    const form = new FormData(this)
+    const response = await fetch(this.action,{
+        method: this.method,
+        body: form,
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    if(response.ok){
+        this.reset();
+        alert("gracias por contactarme")
+    }
+}
+    </script>
 </body>
 </html>
