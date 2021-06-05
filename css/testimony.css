@@ -17,9 +17,12 @@
 }
 
 
-.project-image img {
+.testimony-image img {
     max-inline-size: 100%;
 }
+
+
+
 
 .testimony-description{
     display: flex;
@@ -27,8 +30,9 @@
     gap: 16px;
 }
 
-@media screen and (min-width:768px) {
+@media (min-width: 768px) {
     .testimony{
+        
         display: flex;
         text-align: center;
         gap: 32px;
@@ -38,6 +42,7 @@
     
     .testimony-description{
         flex: 1;
+        
     }
 
     .testimony:nth-child(odd) .testimony-image {
